@@ -43,7 +43,7 @@ publishing {
         create<MavenPublication>("release") {
             groupId = "com.github.frostre1997"
             artifactId = "securestash"
-            version = "0.10.1"
+            version = "0.10.3"
             afterEvaluate {
                 from(components["release"])
             }
