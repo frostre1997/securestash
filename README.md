@@ -37,7 +37,7 @@ dependencyResolutionManagement {
 
 ### Step 2: Add the dependency
 
-In your app/build.gradle or app/build.gradle.kts:
+In your `app/build.gradle` or `app/build.gradle.kts`:
 
 ```groovy
 dependencies {
