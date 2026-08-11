@@ -1,6 +1,6 @@
 # securestash
 
-[![JitPack](https://img.shields.io/jitpack/v/github/frostre1997/securestash?style=flat-square)](https://jitpack.io/#frostre1997/securestash)
+[![](https://jitpack.io/v/frostre1997/securestash.svg)](https://jitpack.io/#frostre1997/securestash)
 [![Android](https://img.shields.io/badge/Android-21%2B-brightgreen?style=flat-square&logo=android)](https://developer.android.com)
 [![Kotlin](https://img.shields.io/badge/Kotlin-1.9.22-purple?style=flat-square&logo=kotlin)](https://kotlinlang.org)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg?style=flat-square)](LICENSE)
