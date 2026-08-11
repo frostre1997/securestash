@@ -1,4 +1,4 @@
-package com.yourname.securestash.crypto
+package com.frostre1997.securestash.crypto
 
 import android.content.Context
 import androidx.security.crypto.EncryptedFile
