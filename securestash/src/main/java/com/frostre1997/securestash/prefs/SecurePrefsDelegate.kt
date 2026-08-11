@@ -3,7 +3,7 @@ package com.frostre1997.securestash.prefs
 import android.content.Context
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
-import com.yourname.securestash.crypto.CryptoManager
+import com.frostre1997.securestash.crypto.CryptoManager
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 

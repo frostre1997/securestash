@@ -1,8 +1,10 @@
 package com.frostre1997.securestash.prefs
+import android.content.SharedPreferences
+import androidx.security.crypto.MasterKey
 
 import android.content.Context
 import androidx.security.crypto.EncryptedSharedPreferences
-import com.yourname.securestash.crypto.CryptoManager
+import com.frostre1997.securestash.crypto.CryptoManager
 import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow

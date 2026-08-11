@@ -1,7 +1,7 @@
 package com.frostre1997.securestash.file
 
 import android.content.Context
-import com.yourname.securestash.crypto.CryptoManager
+import com.frostre1997.securestash.crypto.CryptoManager
 import java.io.File
 
 /**
