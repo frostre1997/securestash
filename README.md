@@ -1,4 +1,4 @@
-# SecureStash
+# securestash
 
 [![JitPack](https://img.shields.io/jitpack/v/github/frostre1997/securestash?style=flat-square)](https://jitpack.io/#frostre1997/securestash)
 [![Android](https://img.shields.io/badge/Android-21%2B-brightgreen?style=flat-square&logo=android)](https://developer.android.com)
