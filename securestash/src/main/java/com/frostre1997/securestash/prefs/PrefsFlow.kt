@@ -9,18 +9,6 @@ import kotlinx.coroutines.channels.awaitClose
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.callbackFlow
 
-/**
- * Creates a Flow that emits the current value and updates whenever the preference changes.
- * Perfect for Compose UI or LiveData integration.
- *
- * @param context The Android Context.
- * @param key The unique identifier for this preference.
- * @param defaultValue The fallback value if the key does not exist.
- * @param type The class type of the value.
- * @param fileName The name of the encrypted preferences file (default: "secure_stash_prefs").
- * @param requireUserAuth If true, reading requires biometric/pin authentication.
- * @return A Flow<T> that emits the current value and subsequent updates.
- */
 fun <T> securePrefsFlow(
     context: Context,
     key: String,

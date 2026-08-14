@@ -4,25 +4,13 @@ import android.content.Context
 import androidx.security.crypto.EncryptedSharedPreferences
 import androidx.security.crypto.MasterKey
 import com.frostre1997.securestash.crypto.CryptoManager
+import com.frostre1997.securestash.crypto.CryptoException
 import com.frostre1997.securestash.crypto.KeyMismatchException
+import com.frostre1997.securestash.crypto.UnsupportedTypeException
 import kotlin.properties.ReadWriteProperty
 import kotlin.reflect.KProperty
 
-/**
- * A property delegate that stores values securely in EncryptedSharedPreferences.
- * Supports String, Int, Boolean, Float, Long, and Set<String>.
- *
- * @param T The type of the value being stored.
- * @property context The Android Context.
- * @property key The unique identifier for this preference.
- * @property defaultValue The fallback value if the key does not exist.
- * @property type The class type of T.
- * @property masterKey Optional MasterKey. If null, one is auto-generated.
- * @property fileName The name of the encrypted preferences file (default: "secure_stash_prefs").
- * @property requireUserAuth If true, reading/writing requires biometric/pin authentication.
- * @property clearOnMismatch If true, when a KeyMismatchException occurs, the value is reset to default.
- */
-class SecurePrefsDelegate<T>(
+class SecurePrefsDelegate<T : Any>(
     private val context: Context,
     private val key: String,
     private val defaultValue: T,
@@ -58,7 +46,6 @@ class SecurePrefsDelegate<T>(
             } ?: defaultValue
         } catch (e: KeyMismatchException) {
             if (clearOnMismatch) {
-                // Reset the corrupted value to default
                 setValue(thisRef, property, defaultValue)
                 defaultValue
             } else {
@@ -87,18 +74,7 @@ class SecurePrefsDelegate<T>(
     }
 }
 
-/**
- * Creates a secure preference delegate.
- *
- * @param context The Android Context.
- * @param key The unique identifier for this preference.
- * @param defaultValue The fallback value if the key does not exist.
- * @param fileName The name of the encrypted preferences file (default: "secure_stash_prefs").
- * @param requireUserAuth If true, reading/writing requires biometric/pin authentication.
- * @param clearOnMismatch If true, automatically clears the preference if the encryption key changes.
- * @return A SecurePrefsDelegate for use in property delegation.
- */
-inline fun <reified T> securePrefs(
+inline fun <reified T : Any> securePrefs(
     context: Context,
     key: String,
     defaultValue: T,
